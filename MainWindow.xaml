@@ -7,97 +7,101 @@
         mc:Ignorable="d"
         Title="Visor de Fuentes" Height="350" Width="500">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
         <Border
             Grid.Row="0"
             Grid.Column="0"
-            Margin="8,4,4,8"
+            Grid.ColumnSpan="3"
+            Margin="8"
             BorderThickness="1"
-            BorderBrush="LightGray">
+            BorderBrush="LightGray"
+            >
             <DockPanel
                 Margin="4">
-                <TextBlock x:Name="leyendaTexBlock"
-                           HorizontalAlignment="Center"
-                           VerticalAlignment="Center">
-                    Instituto Tecnológico de Campeche
+                <TextBlock 
+                    Text="Instituto Tecnológico de Campeche"
+                    x:Name="leyendaTexBlock"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+
                 </TextBlock>
             </DockPanel>
         </Border>
 
         <GroupBox
-                  Grid.Column="0"
-                  Header="Fuente"
-                  BorderBrush="LightGray"
-                  BorderThickness="1"
-                  Margin="-25,6,37,6">
-
-            <ComboBox x:Name="fuenteComboBox"
-                      VerticalAlignment="Top"
-                      Margin="4"
-                      SelectedIndex="0">
-
-                <ComboBoxItem Content="Arial">
-                </ComboBoxItem>
-
-                <ComboBoxItem Content="Consolas">
-                </ComboBoxItem>
-
-                <ComboBoxItem Content="Times New Roman">
-                </ComboBoxItem>
-
-                <ComboBoxItem Content="Verdana">
-                </ComboBoxItem>
+            Grid.Row="1"
+            Grid.Column="0"
+            Header="Fuente"
+            BorderBrush="LightGray"
+            BorderThickness="1"
+            Margin="8,4,4,8">
+            <ComboBox 
+                x:Name="fuenteComboBox"
+                VerticalAlignment="Top"
+                Margin="4"
+                SelectedIndex="0">
+                <ComboBoxItem Content="Arial"></ComboBoxItem>
+                <ComboBoxItem Content="Consolas"></ComboBoxItem>
+                <ComboBoxItem Content="Times New Roman"></ComboBoxItem>
+                <ComboBoxItem Content="Verdana"></ComboBoxItem>
             </ComboBox>
         </GroupBox>
 
-        <GroupBox
-                  Header="Estilo"
-                  BorderBrush="LightGray"
-                  BorderThickness="1"
-                  Margin="-29,6,37,6">
-
-            <StackPanel Height="115" Margin="264,0,122,0">
+        <GroupBox 
+            Grid.Row="1"
+            Grid.Column="1"
+            Header="Estilo"
+            BorderBrush="LightGray"
+            BorderThickness="1"
+            Margin="4,4,4,8">
+            <StackPanel>
                 <CheckBox Content="Cursiva"
                           Margin="8,8,8,4"
                           IsChecked="False"
-                          x:Name="cursivaCheckBox" >
-                </CheckBox>
-
+                          x:Name="cursivaCheckBox"></CheckBox>
                 <CheckBox Content="Negritas"
                           Margin="8,4,8,8"
                           IsChecked="False"
-                          x:Name="negritasCheckBox">
-                </CheckBox>
+                          x:Name="negritasCheckBox"></CheckBox>
             </StackPanel>
         </GroupBox>
 
-        <GroupBox
-                  Grid.Row="1"
+        <GroupBox 
+            Grid.Row="1"
                   Grid.Column="2"
                   Header="Tamaño"
                   BorderBrush="LightGray"
-                  BorderThickness="1"
-                  Margin="174,200,133,8">
-
+                    BorderThickness="1"
+                    Margin="4,4,8,8">
             <StackPanel>
-                <RadioButton x:Name="smallRadioButton"
-                             Content="Pequeña"
-                             Margin="8,8,8,4"
-                             IsChecked="True" >
-                </RadioButton>
-
-                <RadioButton x:Name="mediumRadioButton"
-                             Content="Mediana"
-                             Margin="8,4,8,4"
-                             IsChecked="False">
-                </RadioButton>
-
-                <RadioButton x:Name="largeRadioButton"
-                             Content="Grande"
-                             Margin="8,4,8,8"
-                             IsChecked="False">
-                </RadioButton>
+                <RadioButton
+                    x:Name="smallRadioButton"
+                    Content="Pequeña"
+                    Margin="8,8,8,4"
+                    IsChecked="True"></RadioButton>
+                <RadioButton
+                    x:Name="mediumRadioButton"
+                    Content="Mediana"
+                    Margin="8,4,8,4"
+                    IsChecked="False"></RadioButton>
+                <RadioButton
+                    x:Name="largeRadioButton"
+                    Content="Grande"
+                    Margin="8,4,8,8"
+                    IsChecked="False"
+                    ></RadioButton>
             </StackPanel>
         </GroupBox>
+
 
     </Grid>
 </Window>
